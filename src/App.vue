@@ -1,26 +1,17 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <the-toast />
+  <main-layout v-if="layout === 'main'" />
+  <empty-layout v-else />
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+<script setup>
+import { computed } from "vue";
+import MainLayout from "./layouts/MainLayout.vue";
+import EmptyLayout from "./layouts/EmptyLayout.vue";
+import { useRoute } from "vue-router";
+import TheToast from "./components/TheToast.vue";
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+const route = useRoute();
+
+const layout = computed(() => route.meta.layout);
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
