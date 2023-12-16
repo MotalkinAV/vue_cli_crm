@@ -1,22 +1,22 @@
 <template>
   <div class="col s12 m6 l8">
-    <div class="card orange darken-3 bill-card">
-      <div class="card-content white-text">
+    <div class="card currency-card">
+      <div class="card-content">
         <div class="card-header">
           <span class="card-title">{{ $i18n('TextExchangeRate')}}</span>
         </div>
         <table>
           <thead>
-            <tr>
+            <tr class="table-row">
               <th>{{ $i18n('TextCurrency')}}</th>
               <th>{{ $i18n('TextRate')}}</th>
               <th>{{ $i18n('TextDate')}}</th>
             </tr>
           </thead>
           <tbody>
-            <tr v-for="cur in currenciesStore.getCurrencies()" :key="cur">
+            <tr v-for="cur in currenciesStore.getCurrenciesNoRub()" :key="cur" class="table-row">
               <td>{{ cur }}</td>
-              <td>{{ currencyFilter(currenciesStore.getCurrency(cur),cur) }}</td>
+              <td>{{ currencyFilter(currenciesStore.getCurrency(cur),"RUB") }}</td>
               <td>{{ dateFilter(new Date(currenciesStore.getCurrencyDate())) }}</td>
             </tr>
           </tbody>

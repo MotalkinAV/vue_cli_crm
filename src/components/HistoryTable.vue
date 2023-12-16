@@ -1,7 +1,7 @@
 <template>
   <table>
     <thead>
-      <tr>
+      <tr class="table-row">
         <th style="width: 5rem">#</th>
         <th
           v-for="tableTitle in tableTitles"
@@ -9,10 +9,11 @@
           style="width: 20rem"
         >
           <a
-            style="cursor: pointer; color: black"
+            class="sort-title"
+            style="cursor: pointer"
             @click.prevent="sortTable(tableTitle.type)"
             >{{ $i18n(tableTitle.title) }}
-            <i class="tiny material-icons">{{
+            <i class="tiny material-icons sort-icon">{{
               sortOptions.order === "asc" && sortOptions.key === tableTitle.type
                 ? "arrow_upward"
                 : sortOptions.order === "desc" && sortOptions.key === tableTitle.type
@@ -26,7 +27,7 @@
     </thead>
 
     <tbody>
-      <tr v-for="(record, idx) in historyRecords" :key="record.id">
+      <tr v-for="(record, idx) in historyRecords" :key="record.id" class="table-row">
         <td>{{ idx + 1 }}</td>
         <td>{{ currencyFilter(record.amount) }}</td>
         <td>{{ dateFilterShort(new Date(record.date)) }}</td>

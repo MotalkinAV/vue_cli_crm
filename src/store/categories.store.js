@@ -6,13 +6,19 @@ import { AppError } from "@/utils/errors";
 
 export const useCategoriesStore = defineStore("categories", () => {
 
-  const categories = ref([])
+  const categories = ref({})
   const currentCategory = ref(null)
 
 
 
   function setCategories(value) {
-    categories.value = Object.keys(value).map(key => ({...value[key], id: key}))
+    // console.log("CATEGORIES STORE", "function setCategories", value);
+    // categories.value = Object.keys(value).map(key => ({...value[key], id: key}))
+    if (value) {
+      categories.value = Object.keys(value).map(key => ({...value[key], id: key}))
+    } else {
+      categories.value = {}
+    }
   }
   function setCurrentСategory(value) {
     currentCategory.value = value
@@ -33,7 +39,9 @@ export const useCategoriesStore = defineStore("categories", () => {
       console.log("CATEGORIES STORE", "function downloadCategories", 'START')
       const { data } = await axios.get(getUrl("/categories"));
       setCategories(data)
-      setCurrentСategory(categories.value[0].id)
+      if (data) {
+        setCurrentСategory(categories.value[0].id)
+      }
     } catch (error) {
       throw new AppError(error);
     }

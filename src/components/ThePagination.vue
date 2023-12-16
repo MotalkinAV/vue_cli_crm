@@ -1,13 +1,13 @@
 <template>
   <div>
     <ul class="pagination">
-      <li class="pagination-item" :class="previewBtnClass">
-        <a @click.prevent="previewPage()"
+      <li :class="previewBtnClass">
+        <a class="pagination-item" @click.prevent="previewPage()"
           ><i class="material-icons">chevron_left</i></a
         >
       </li>
-      <li v-if="showPreviewBtnSection" class="waves-effect pagination-item">
-        <a @click.prevent="previewButtonSection()">...</a>
+      <li v-if="showPreviewBtnSection" class="waves-effect">
+        <a class="pagination-item" @click.prevent="previewButtonSection()">...</a>
       </li>
       <li v-else class="pagination-item"></li>
       <li
@@ -16,10 +16,10 @@
         class="waves-effect pagination-item"
         :class="{ active: activeBtn === page }"
       >
-        <a @click.prevent="thisPage(page)">{{ page }}</a>
+        <a class="pagination-item" @click.prevent="thisPage(page)">{{ page }}</a>
       </li>
-      <li v-if="showNextBtnSection" class="waves-effect pagination-item">
-        <a @click.prevent="nextButtonSection()">...</a>
+      <li v-if="showNextBtnSection" class="waves-effect">
+        <a class="pagination-item" @click.prevent="nextButtonSection()">...</a>
       </li>
       <li
         v-else
@@ -27,8 +27,8 @@
         v-for="BtnSpace in nonBtnSpace"
         :key="BtnSpace"
       ></li>
-      <li class="pagination-item" :class="nextBtnClass">
-        <a @click.prevent="nextPage()"
+      <li :class="nextBtnClass">
+        <a class="pagination-item" @click.prevent="nextPage()"
           ><i class="material-icons">chevron_right</i></a
         >
       </li>

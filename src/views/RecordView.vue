@@ -8,8 +8,8 @@
 
     <div v-else-if="!categories.length">
       <h5 class="center">
-        {{ $i18n('NoCategoriesP')}}
-        <router-link to="/categories">{{ $i18n('AddNewCategoryLink')}}</router-link>
+        {{ $i18n('TextNoCategories')}}
+        <router-link to="/categories">{{ $i18n('LinkAddNewCategory')}}</router-link>
       </h5>
     </div>
 

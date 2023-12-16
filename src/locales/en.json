@@ -6,6 +6,10 @@
   "TitlePlanning": "Planning",
   "TitleRecord": "New Record",
   "TitleCategories": "Categories",
+  "TitleDetail": "Details",
+  "TitleHome": "Bill",
+  "TitleRegister": "Sign Up",
+  "TitleLogin": "Sign In",
 
   "FormName": "Name",
   "FormLanguage": "Language",

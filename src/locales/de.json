@@ -6,6 +6,10 @@
   "TitlePlanning": "Planung",
   "TitleRecord": "Neuer Eintrag",
   "TitleCategories": "Kategorien",
+  "TitleDetail": "Details",
+  "TitleHome": "Rechnung",
+  "TitleRegister": "Registrieren",
+  "TitleLogin": "Anmelden",
 
   "FormName": "Name",
   "FormLanguage": "Sprache",

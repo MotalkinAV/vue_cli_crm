@@ -6,6 +6,10 @@
   "TitlePlanning": "Планирование",
   "TitleRecord": "Новая запись",
   "TitleCategories": "Категории",
+  "TitleDetail": "Детали",
+  "TitleHome": "Счет",
+  "TitleRegister": "Регистрация",
+  "TitleLogin": "Вход",
 
   "FormName": "Имя",
   "FormLanguage": "Язык",

@@ -1,0 +1,49 @@
+@import './variables.scss';
+
+.light-mode {
+  .app-main-layout {
+    transition: $transition-effects;
+    color: $grey-darken-4;
+  }
+  .navbar {
+    transition: $transition-effects;
+    background-color: $light-blue;
+    .dropdown-text {
+      color: $black
+    }
+  }
+  .app-sidenav{
+    transition: $transition-sidebar, $transition-effects;
+  }
+  .bill-card {
+    transition: $transition-effects;
+    background-color: $light-blue;
+  }
+  .currency-card {
+    transition: $transition-effects;
+    background-color: $orange-darken-3;
+  }
+  .card-content {
+    color: $white
+  }
+  .sort-icon {
+    color: $black
+  }
+  .sort-title {
+    color: $black
+  }
+  .page-footer {
+    transition: $transition-effects;
+    background-color: $teal-lighten-1;
+    .footer-text {
+      color: $white
+    }
+    .footer-icon {
+      color: $white
+    }
+    .active {
+      background-color: transparent;
+      color: $grey-lighten-2
+    }
+  }
+}

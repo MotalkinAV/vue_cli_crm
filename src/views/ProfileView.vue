@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="page-title">
-      <h3>{{ $i18n('TitleProfile') }}</h3>
+      <h3>{{ $i18n("TitleProfile") }}</h3>
     </div>
 
     <form class="form" @submit.prevent="submitHandler">
@@ -12,7 +12,7 @@
           v-model="name"
           :class="{ invalid: validator.name.$errors.length }"
         />
-        <label for="description">{{ $i18n('FormName')}}</label>
+        <label for="description">{{ $i18n("FormName") }}</label>
         <span
           v-for="error of validator.name.$errors"
           :key="error.$uid"
@@ -31,11 +31,11 @@
             {{ language.title }}
           </option>
         </select>
-        <label for="selectLang">{{ $i18n('FormLanguage')}}</label>
+        <label for="selectLang">{{ $i18n("FormLanguage") }}</label>
       </div>
 
       <button class="btn waves-effect waves-light" type="submit">
-        {{ $i18n('ButtonUpdate')}}
+        {{ $i18n("ButtonUpdate") }}
         <i class="material-icons right">send</i>
       </button>
     </form>
@@ -50,7 +50,7 @@ import useVuelidate from "@vuelidate/core";
 import { required } from "@vuelidate/validators";
 import { AppError } from "@/utils/errors";
 import router from "@/router/router";
-import { languages } from "../plugins/i18n.plugin"
+import { languages } from "../plugins/i18n.plugin";
 
 const infoStore = useInfoStore();
 
@@ -69,21 +69,21 @@ async function submitHandler() {
   try {
     if (validator.value.$invalid) {
       validator.value.$touch();
-      router.push('/profile?error=incorrect_data')
+      router.push("/profile?error=incorrect_data");
       return;
     }
-    await infoStore.changeInfoName(name.value)
-    await infoStore.changeInfoLocale(locale.value)
+    await infoStore.changeInfoName(name.value);
+    await infoStore.changeInfoLocale(locale.value);
 
-    router.push('/profile?success=profile_updated')
+    router.push("/profile?success=profile_updated");
   } catch (error) {
     throw new AppError(error);
   }
 }
 
 function initForm() {
-  M.FormSelect.init(selectLang.value)
-  M.updateTextFields()
+  M.FormSelect.init(selectLang.value);
+  M.updateTextFields();
 }
 
 onMounted(() => {
@@ -91,7 +91,7 @@ onMounted(() => {
   locale.value = infoStore.getLocale();
 
   setTimeout(() => {
-    initForm()
-  })
+    initForm();
+  });
 });
 </script>

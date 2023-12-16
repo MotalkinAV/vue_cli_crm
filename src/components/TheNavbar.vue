@@ -1,11 +1,11 @@
 <template>
-  <nav class="navbar blue lighten-1">
+  <nav class="navbar">
     <div class="nav-wrapper">
       <div class="navbar-left">
         <a href="#" @click.prevent="showNavbar()">
-          <i class="material-icons white-text">dehaze</i>
+          <i class="material-icons navbar-text">dehaze</i>
         </a>
-        <span class="white-text"
+        <span class="navbar-text"
           >{{ dateFilter(date) }} {{ timeFilter(date) }}</span
         >
       </div>
@@ -13,7 +13,7 @@
       <ul class="right hide-on-small-and-down">
         <li>
           <a
-            class="dropdown-trigger white-text profile"
+            class="dropdown-trigger navbar-text profile"
             href="#"
             data-target="dropdown"
             ref="dropdown"
@@ -23,14 +23,14 @@
 
           <ul id="dropdown" class="dropdown-content">
             <li>
-              <router-link to="/profile" class="black-text">
+              <router-link to="/profile" class="dropdown-text">
                 <i class="material-icons">account_circle</i>
                 {{ $i18n('LinkProfile')}}
               </router-link>
             </li>
             <li class="divider" tabindex="-1"></li>
             <li>
-              <a href="#" class="black-text" @click.prevent="logout()">
+              <a class="dropdown-text" @click.prevent="logout()">
                 <i class="material-icons">assignment_return</i>
                 {{ $i18n('LinkExit')}}
               </a>

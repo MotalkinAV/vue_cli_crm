@@ -1,5 +1,8 @@
 <template>
   <div>
+        <div class="page-title">
+      <h3>{{ $i18n('TitleDetail')}}</h3>
+        </div>
     <the-loader v-if="isLoadingRecords" />
     <div v-else>
       <div class="breadcrumb-wrap">

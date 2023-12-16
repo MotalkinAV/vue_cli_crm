@@ -1,0 +1,98 @@
+@import './variables.scss';
+
+.dark-mode {
+  .app-main-layout {
+    transition: $transition-effects;
+    background-color: $grey-darken-2;
+    color: $grey-lighten-2;
+  }
+  .page-title {
+    border-bottom: solid 1px $grey-lighten-2
+  }
+
+  .navbar {
+    transition: $transition-effects;
+    background-color: $grey-darken-4;
+    .navbar-text {
+      color: $grey-lighten-2
+    }
+  }
+
+  .input-field input {
+    color: $grey-lighten-2
+  }
+
+  .caret {
+    fill: $grey-lighten-2 !important
+  }
+  
+  .dropdown-content {
+    background-color: $grey-darken-3;
+    .dropdown-text {
+      color: $grey-lighten-2
+    }
+  }
+
+  .app-sidenav{
+    transition: $transition-sidebar, $transition-effects;
+    background-color: $grey-darken-3;
+    .sidenav-links {
+      color: $grey-lighten-2
+    }
+    .sidenav-icon {
+      color: $grey-lighten-2;
+    }
+    .theme-switch-icon {
+      color: $grey-lighten-2;
+    }
+  }
+
+  .bill-card {
+    transition: $transition-effects;
+    background-color: $grey-darken-3;
+    .currency-line {
+      border-bottom: 2px solid $grey-lighten-2
+    }
+  }
+
+  .currency-card {
+    transition: $transition-effects;
+    background-color: $grey-darken-3;
+  }
+
+  .card-content {
+    color: $grey-lighten-2
+  }
+
+  .table-row {
+    border-bottom: solid 1px $grey-lighten-2;
+    .sort-icon {
+      color: $grey-lighten-2
+    }
+    .sort-title {
+      color: $grey-lighten-2
+    }
+  }
+  .pagination-item {
+    color: $grey-lighten-2
+  }
+
+  .progress {
+    background-color: $grey;
+  }
+
+  .page-footer {
+    transition: $transition-effects;
+    background-color: $grey-darken-4;
+    .footer-text {
+      color: $grey-lighten-2
+    }
+    .footer-icon {
+      color: $grey-lighten-2
+    }
+    .active {
+      background-color: transparent;
+      color: $grey
+    }
+  }
+}

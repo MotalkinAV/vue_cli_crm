@@ -3,7 +3,7 @@
     <the-loader/>
   </div>
 
-  <div v-else>
+  <div v-else :class="isDark ? 'dark-mode' : 'light-mode'">
     <div class="app-main-layout">
       <the-navbar />
       <the-sidebar />
@@ -37,6 +37,7 @@ import { useCurrenciesStore } from "@/store/currencies.store";
 import { useRecordsStore } from "@/store/records.store";
 import { AppError } from "@/utils/errors";
 import { useInfoStore } from "@/store/info.store";
+import { isDark } from '../use/use.dark.mode'
 
 
 const categoriesStore = useCategoriesStore();
@@ -74,3 +75,8 @@ onMounted(async () => {
   }
 });
 </script>
+
+<style lang="sass">
+@import '@/assets/dark-mode.scss'
+@import '@/assets/light-mode.scss'
+</style>

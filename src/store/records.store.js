@@ -6,12 +6,17 @@ import { AppError } from "@/utils/errors";
 
 export const useRecordsStore = defineStore("record", () => {
 
-  const records = ref([])
+  const records = ref({})
 
   function getRecords() { return records }
   function addRecordInRecords(value) { records.value.push(value) }
   function setRecords(value) {
-    records.value = Object.keys(value).map(key => ({...value[key], id: key}))
+    // records.value = Object.keys(value).map(key => ({...value[key], id: key}))
+    if (value) {
+      records.value = Object.keys(value).map(key => ({...value[key], id: key}))
+    } else {
+      records.value = {}
+    }
   }
 
 

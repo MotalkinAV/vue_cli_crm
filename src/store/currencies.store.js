@@ -2,7 +2,7 @@ import { defineStore } from "pinia";
 import { ref } from "vue";
 import axios from "axios";
 
-const FIXER_URL = `http://data.fixer.io/api/latest?access_key=${process.env.VUE_APP_FIXER_API_KEY}&symbols=USD,EUR,RUB`;
+const CBR_URL = 'https://www.cbr-xml-daily.ru/latest.js'
 
 export const useCurrenciesStore = defineStore("currencies", () => {
   const currency = ref({});
@@ -12,8 +12,12 @@ export const useCurrenciesStore = defineStore("currencies", () => {
     return currencies.value;
   }
 
+  function getCurrenciesNoRub() {
+    return currencies.value.filter((c) => c !== "RUB")
+  }
+
   function getCurrency(value) {
-    return currency.value.rates[value];
+    return 1 / currency.value.rates[value] ;
   }
 
   function getCurrencyDate() {
@@ -21,36 +25,18 @@ export const useCurrenciesStore = defineStore("currencies", () => {
   }
 
   function setCurrency(value) {
+    value.rates.RUB = 1
     currency.value = value;
   }
 
   function getMulticurrencyBill(bill, cur) {
-    const baseCurrency =
-      bill / (currency.value.rates["RUB"] / currency.value.rates["EUR"]);
-    return Math.floor(baseCurrency * currency.value.rates[cur]);
+    return Math.floor(bill * currency.value.rates[cur]);
   }
 
   async function fetchCurrency() {
     try {
       console.log("CURRENCIES STORE", "function fetchCurrency");
-      // Вернуть запрос к серверу
-      // const { data } = await axios.get(FIXER_URL);
-
-      // Замена запроса к серверу
-      console.log("CURRENCIES STORE", "function fetchCurrency", axios);
-      console.log("CURRENCIES STORE", "function fetchCurrency", FIXER_URL);
-      const data = {
-        success: true,
-        timestamp: 1519296206,
-        base: "EUR",
-        date: "2023-11-24",
-        rates: {
-          EUR: 1,
-          RUB: 96.0,
-          USD: 1.06,
-        },
-      };
-      // Конец замены запроса к серверу
+      const { data } = await axios.get(CBR_URL)
 
       setCurrency(data);
       console.log("CURRENCIES STORE", currency.value);
@@ -63,6 +49,7 @@ export const useCurrenciesStore = defineStore("currencies", () => {
     currency,
     currencies,
     getCurrencies,
+    getCurrenciesNoRub,
     getCurrency,
     getCurrencyDate,
     fetchCurrency,

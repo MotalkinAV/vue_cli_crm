@@ -1,15 +1,15 @@
 <template>
-  <footer class="page-footer teal lighten-1">
+  <footer class="page-footer">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
-          <h5 class="white-text">{{ $i18n("TitleApp") }}</h5>
+          <h5 class="footer-text">{{ $i18n("TitleApp") }}</h5>
         </div>
         <div class="col l4 offset-l2 s12">
-          <h5 class="white-text">{{ $i18n("Links") }}</h5>
+          <h5 class="footer-text">{{ $i18n("Links") }}</h5>
           <ul>
             <li v-for="link in links" :key="link.url">
-              <router-link class="grey-text text-lighten-3" :to="link.url">{{
+              <router-link class="footer-text" :to="link.url">{{
                 link.title
               }}</router-link>
             </li>
@@ -21,15 +21,15 @@
       <div class="container">
         © 2023 Copyright
         <a
-          class="grey-text text-lighten-4 right"
-          href="https://github.com"
+          class="footer-text right"
+          href="https://github.com/MotalkinAV/vue_cli_crm/tree/master"
           target="_blank"
         >
           <svg
             width="30"
             height="30"
             fill="currentColor"
-            class="bi bi-github"
+            class="footer-icon github"
             viewBox="0 0 16 16"
           >
             <path
@@ -43,8 +43,7 @@
 </template>
 
 <script setup>
-import { links } from "../links/app.links";
-// import gitIcon from "../assets/gitIcon.svg"
+import { links } from "../use/use.links";
 </script>
 
 <style scoped></style>

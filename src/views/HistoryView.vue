@@ -76,10 +76,11 @@ const data = {
         "#ffa726",
       ],
       hoverOffset: 40,
-      borderWidth: 2,
+      borderWidth: 0,
       radius: 130,
       hoverBorderWidth: 0,
-      borderRadius: 4,
+      borderRadius: 0,
+      borderAlign: 'inner',
     },
   ],
 };
@@ -89,12 +90,7 @@ const options = {
   maintainAspectRatio: false,
   plugins: {
     legend: {
-      display: true,
-      position: 'left',
-      labels: {
-        boxWidth: 30,
-        boxHeight: 16,
-      }
+      display: false,
     },
     tooltip: {
       enabled: true,

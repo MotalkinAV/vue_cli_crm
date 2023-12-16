@@ -1,7 +1,7 @@
 <template>
   <div class="col s12 m6 l4">
-    <div class="card light-blue bill-card">
-      <div class="card-content white-text">
+    <div class="card bill-card">
+      <div class="card-content">
         <span class="card-title">{{ $i18n('TextCurrencyAccount')}}</span>
         <p v-for="cur in currenciesStore.getCurrencies()" :key="cur" class="currency-line">
           <span>{{currencyFilter(currenciesStore.getMulticurrencyBill(infoStore.getBill(),cur),cur)}}</span>

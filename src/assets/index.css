@@ -31,7 +31,7 @@ a.active {
   min-height: 100vh;
 }
 .app-sidenav {
-  padding-top: 10vh;
+  padding-top: 5%;
   position: absolute;
   width: 16rem;
   transition: transform 0.3s;
@@ -72,7 +72,7 @@ a.active {
 .app-content {
   padding-top: 64px;
   padding-left: 250px;
-  transition: padding-left 0.3s;
+  transition: padding-left 0.7s;
   position: relative;
 }
 .app-content.full {
@@ -130,6 +130,9 @@ a.active {
 .bill-card {
   height: 310px;
 }
+.currency-card {
+  height: 310px;
+}
 .pointer {
   cursor: pointer;
 }
@@ -171,4 +174,22 @@ a.active {
   width: 2rem;
   height: 2rem;
   color: gray;
+}
+
+.theme-switch {
+  margin-left: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.sidenav-icon {
+  margin-right: .5rem !important
+}
+
+.theme-switch-icon {
+  color: gray;
+}
+
+.page-footer {
+  background-color: gray;
 }
